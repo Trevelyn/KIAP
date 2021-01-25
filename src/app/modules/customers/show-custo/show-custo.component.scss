@@ -1,0 +1,50 @@
+table {
+    width: 100%;
+    margin: auto;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+.hide {
+    display: none;
+}
+
+mat-footer-row mat-footer-cell {
+    justify-content: center;
+    font-style: italic;
+}
+
+search-div {
+    margin: auto;
+}
+
+button {
+    margin: 16px 8px;
+}
+
+mat-form-field {
+    width: 60%;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+mat-form-field-underline {
+    display: none;
+}
+
+mat-form-field-infix {
+    border-top: 0px;
+}
+
+.mat-form-field-wrapper {
+    padding-bottom: 0px;
+}
+
+.mat-form-field-suffix button {
+    height: 32px;
+    width: 32px;
+}
