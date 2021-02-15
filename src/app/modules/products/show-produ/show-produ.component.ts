@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProductsService } from 'src/app/services/products.service';
+import { CrudProduComponent } from '../crud-produ/crud-produ.component';
 
 @Component({
   selector: 'app-show-produ',
@@ -16,7 +17,7 @@ export class ShowProduComponent implements OnInit {
     private dialog: MatDialog ) { }
 
   listData = new MatTableDataSource<any>();
-  displayedColumns: string[] = ['productId','productName','itemsize','sku','actions'];
+  displayedColumns: string[] = ['productId','productName','itemsize','sku','price','actions'];
  
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -50,7 +51,12 @@ export class ShowProduComponent implements OnInit {
   }
   //create new customer
   onCreate(){
-   // this.dialog.open(CrudCustoComponent);
+    this.service.initializeFormGroup();
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(CrudProduComponent, dialogConfig);
   }
   
 }

@@ -16,36 +16,44 @@ export class CrudCustoComponent implements OnInit {
 
    
 
+
   ngOnInit(): void {
+    
+    
+
   }
 
-  onSubmit(){
+ /**  onSubmit(){
      if (this.service.form.valid){
         if (!this.service.form.get('$id')?.value)
-        this.service.addCustomer(this.service.form.value).subscribe();
+          this.service.addCustomer(this.service.form.value).subscribe(data =>{this.service.form.value;});
 
         else
-      this.service.updateCustomer(this.service.form.value);
+          this.service.updateCustomer(this.service.form.value).subscribe(data =>{});
       this.service.form.reset();
       this.service.initializeFormGroup();
       this.notificationService.success('Submitted successfully');
       this.onClose();
       }
-    }
-      
-    
-   /** if (this.form.valid){
-      if (!this.form.get('$id')?.value)
-      this.service.addCustomer(this.form.value);
-
-      else
-      this.service.updateCustomer(this.form.value);
-      this.form.reset();
-      this.initializeFormGroup();
-      this.notificationService.success('Submitted successfully');
-      this.onClose();
-
     }*/
+      
+  
+   onSubmit(){
+      if (this.service.form.valid){
+         if (!this.service.form.get('$id')?.value)
+         this.service.addCustomer(this.service.form.value).subscribe(data => 
+           {});
+         else
+         this.service.updateCustomer(this.service.form.value).subscribe(data =>{alert("updated")
+         });
+       this.service.form.reset();
+       this.service.initializeFormGroup();
+       this.notificationService.success('Submitted successfully');
+       this.onClose();
+       }
+         
+     
+     }
   
 
   onClear() {
@@ -56,7 +64,7 @@ export class CrudCustoComponent implements OnInit {
 
   onClose(){
     this.service.form.reset();
-    
+    this.service.initializeFormGroup();
     this.dialogRef.close();
   }
 

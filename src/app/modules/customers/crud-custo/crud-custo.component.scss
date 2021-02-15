@@ -7,6 +7,11 @@ form.normal-form {
     padding: 5%;
 }
 
-.controles-container>* {
+.controles-container {
     width: 100%;
+}
+
+.mat-toolbar {
+    width: auto;
+    background-color: rgb(65, 65, 65);
 }

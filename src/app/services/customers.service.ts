@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomersService {
-readonly APIUrl = "http://127.0.0.1:8000";
+readonly APIUrl= "http://127.0.0.1:8000";
   
 
   constructor(private http:HttpClient) { }
@@ -27,7 +29,15 @@ readonly APIUrl = "http://127.0.0.1:8000";
       category:''
     });
   }
- 
+
+  updateFormGroup($id: any){
+    this.form.patchValue($id);
+  }
+
+  /**deleteform($id: string){
+    this.customerList.remove($key)
+  }*/
+  
 
   getCustoList(): Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl + '/customers/');
@@ -38,7 +48,7 @@ readonly APIUrl = "http://127.0.0.1:8000";
   updateCustomer(val: any){
     return this.http.put(this.APIUrl + '/customers/', val);
   }
-  deleteCusomer(val: any){
-    return this.http.delete(this.APIUrl + '/customers/' + val);
+  deleteCustomer($id:number){
+    return this.http.delete(this.APIUrl + '/customers/' +$id );
   }
 }

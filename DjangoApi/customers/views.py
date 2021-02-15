@@ -19,13 +19,13 @@ def customerApi(request,id=0):
         customers_serializer = CustomersSerializer(data=customer_data)
         if customers_serializer.is_valid():
             customers_serializer.save()
-            return JsonResponse("Aded succefully!", safe=False)
+            return JsonResponse("Added succefully!", safe=False)
         return JsonResponse("Failed to Add", safe=False)
     
     elif request.method=='PUT':
         customer_data = JSONParser().parse(request)
         customers = Customers.objects.get(customerId=customer_data['customerId'])
-        customers_serializer = CustomersSerializer(data=customer_data)
+        customers_serializer = CustomersSerializer(customers,data=customer_data)
         if customers_serializer.is_valid():
             customers_serializer.save()
             return JsonResponse("update succefully!", safe=False)

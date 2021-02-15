@@ -2,7 +2,7 @@
     <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
             <mat-panel-title>Dashboard</mat-panel-title>
-            <mat-icon>account_circle</mat-icon>
+            <mat-icon>poll</mat-icon>
         </mat-expansion-panel-header>
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
 
@@ -10,21 +10,24 @@
     <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
             <mat-panel-title>Customer</mat-panel-title>
-            <mat-icon>account_circle</mat-icon>
+            <mat-icon>group</mat-icon>
         </mat-expansion-panel-header>
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/customers">Customer</a>
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Regions</a>
-
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Payments</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Report</a>
 
     </mat-expansion-panel>
     <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
             <mat-panel-title>Sales</mat-panel-title>
-            <mat-icon>account_circle</mat-icon>
+            <mat-icon>shopping_basket</mat-icon>
         </mat-expansion-panel-header>
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/sales">Sales</a>
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Dashboard</a>
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Dashboard</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/sales">Invoicing</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Purchase Order</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Quotes</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Goods Receiving</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Goods Returned</a>
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Report</a>
 
     </mat-expansion-panel>
@@ -32,10 +35,11 @@
     <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
             <mat-panel-title>Products</mat-panel-title>
-            <mat-icon>account_circle</mat-icon>
+            <mat-icon>store</mat-icon>
         </mat-expansion-panel-header>
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/products">Products</a>
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Price</a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/products">Stock Adjustment</a>
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/Dashboards">Report</a>
 
     </mat-expansion-panel>

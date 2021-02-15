@@ -32,6 +32,11 @@
             <td mat-cell *matCellDef="let dataItem"> {{dataItem.sku}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+            <td mat-cell *matCellDef="let dataItem"> {{dataItem.price}} </td>
+        </ng-container>
+
         <ng-container matColumnDef="actions">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let row">
